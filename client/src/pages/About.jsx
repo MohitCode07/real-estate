@@ -1,51 +1,31 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function About() {
-  useEffect(() => {
-    // Configure chatbot
-    window.embeddedChatbotConfig = {
-      chatbotId: "pZ9tSWXSlkecay-yK2Izi",
-      domain: "www.chatbase.co",
-    };
-
-    // Load the chatbot script
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    // Cleanup script
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="max-w-6xl px-4 py-20 mx-auto">
       <h1 className="mb-4 text-3xl font-bold text-slate-800">
-        About CodeScribe
+        About NestFinder
       </h1>
       <p className="mb-4 text-slate-700">
-        CodeScribe is a leading real estate agency that specializes in helping
-        clients buy, sell, and rent properties in the most desirable
-        neighborhoods. Our team of experienced agents is dedicated to providing
-        exceptional service and making the buying and selling process as smooth
-        as possible.
+        NestFinder is a modern real estate platform that helps you buy, sell, or rent properties directly from landlords—no brokers involved. We’re focused on providing a smooth, user-friendly experience to make your real estate journey stress-free.
       </p>
       <p className="mb-4 text-slate-700">
-        Our mission is to help our clients achieve their real estate goals by
-        providing expert advice, personalized service, and a deep understanding
-        of the local market. Whether you are looking to buy, sell, or rent a
-        property, we are here to help you every step of the way.
+        Our mission is to empower users with direct access to property listings and communication with landlords. Whether you’re looking for a cozy rental or your dream home to buy, NestFinder is your trusted partner.
       </p>
-      <p className="mb-4 text-slate-700">
-        Our team of agents has a wealth of experience and knowledge in the real
-        estate industry, and we are committed to providing the highest level of
-        service to our clients. We believe that buying or selling a property
-        should be an exciting and rewarding experience, and we are dedicated to
-        making that a reality for each and every one of our clients.
+      <p className="mb-10 text-slate-700">
+        With features like secure sign-up/login, detailed listings with pricing, bed/bath count, descriptions, and direct messaging, we’re building a transparent and easy-to-use real estate experience.
       </p>
+
+      {/* Embedded Chatbase Iframe */}
+      <div className="w-full min-h-[700px]">
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/NdNblzLi_glM9SmYa8N9A"
+          width="100%"
+          style={{ height: "100%", minHeight: "700px" }}
+          frameBorder="0"
+          title="NestFinder Chatbot"
+        ></iframe>
+      </div>
     </div>
   );
 }
